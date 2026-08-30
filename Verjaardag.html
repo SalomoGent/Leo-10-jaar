@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mijn 10de Verjaardag 🎂</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #4facfe, #00f2fe);
+        margin: 0;
+        padding: 20px;
+        color: #333;
+    }
+
+    .container {
+        max-width: 700px;
+        margin: auto;
+        background: white;
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+        text-align: center;
+        color: #0078d4;
+    }
+
+    label {
+        display: block;
+        margin-top: 20px;
+        font-weight: bold;
+    }
+
+    select, button {
+        width: 100%;
+        padding: 12px;
+        margin-top: 8px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+    }
+
+    button {
+        background: #0078d4;
+        color: white;
+        border: none;
+        cursor: pointer;
+        margin-top: 25px;
+    }
+
+    button:hover {
+        background: #005fa3;
+    }
+
+    .result {
+        margin-top: 30px;
+        padding: 20px;
+        background: #f3f8ff;
+        border-radius: 12px;
+        display: none;
+    }
+
+    .emoji {
+        font-size: 1.2em;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🎂 Leo's Ideale Verjaardag 🎂</h1>
+
+    <label for="datum">📅 Kies een zaterdag</label>
+    <select id="datum">
+        <option>05 september 2026</option>
+        <option>12 september 2026</option>
+        <option>19 september 2026</option>
+        <option>26 september 2026</option>
+        <option>03 oktober 2026</option>
+        <option>10 oktober 2026</option>
+    </select>
+
+    <label for="activiteit">🎮 Kies een activiteit</label>
+    <select id="activiteit">
+        <option>🏄 Suppen op het water</option>
+        <option>🕹️ Arcadehal Korenmarkt</option>
+        <option>🎬 Cinema</option>
+        <option>⛳ Minigolf Blaarmeersen</option>
+        <option>🥎 Petanque Toernooi</option>
+    </select>
+
+    <label for="eten">🍽️ Kies een maaltijd</label>
+    <select id="eten">
+        <option>🍕 Pizza</option>
+        <option>🥙 Pita</option>
+        <option>🍟 Frieten</option>
+        <option>🍝 Spaghetti</option>
+    </select>
+
+    <button onclick="toonKeuze()">🎉 Dit wil ik voor mijn verjaardag!</button>
+
+    <div class="result" id="result">
+        <h2>Mijn keuze 🎈</h2>
+        <p id="samenvatting"></p>
+    </div>
+</div>
+
+<script>
+function toonKeuze() {
+    const datum = document.getElementById("datum").value;
+    const activiteit = document.getElementById("activiteit").value;
+    const eten = document.getElementById("eten").value;
+
+    document.getElementById("samenvatting").innerHTML =
+        `<strong>Datum:</strong> ${datum}<br>
+         <strong>Activiteit:</strong> ${activiteit}<br>
+         <strong>Maaltijd:</strong> ${eten}`;
+
+    document.getElementById("result").style.display = "block";
+}
+</script>
+
+</body>
+</html>
